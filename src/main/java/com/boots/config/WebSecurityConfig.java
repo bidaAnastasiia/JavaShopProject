@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/resources/**").permitAll()
                 .antMatchers("/product/**").permitAll()
 
-                .antMatchers("/productGallery/**").permitAll()
+                .antMatchers("/products/**").permitAll()
                 //Все остальные страницы требуют аутентификации
                 .anyRequest().authenticated()
                 .and()

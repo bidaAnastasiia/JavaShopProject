@@ -34,24 +34,24 @@
             <li>
                 <a href="" >Women</a>
                 <ul class="sub">
-                    <li><a href="">Outerwear</a></li>
-                    <li><a href="">Tops</a></li>
-                    <li><a href="">Bottoms</a></li>
-                    <li><a href="">Dresses & Jumpsuits</a></li>
-                    <li><a href="">Jeans</a></li>
-                    <li><a href="">Bags</a></li>
-                    <li><a href="">Accessories</a></li>
+                    <li><a href="/products/woman/outwear">Outerwear</a></li>
+                    <li><a href="/products/woman/tops">Tops</a></li>
+                    <li><a href="/products/woman/bottoms">Bottoms</a></li>
+                    <li><a href="/products/woman/dresses_jumpsuits">Dresses & Jumpsuits</a></li>
+                    <li><a href="/products/woman/jeans">Jeans</a></li>
+                    <li><a href="/products/woman/bags">Bags</a></li>
+                    <li><a href="/products/woman/accessories">Accessories</a></li>
                 </ul>
             </li>
             <li>
                 <a href="" >Men</a>
                 <ul class="sub">
-                    <li><a href="">Outerwear</a></li>
-                    <li><a href="">Tops</a></li>
-                    <li><a href="">Bottoms</a></li>
-                    <li><a href="">Jeans</a></li>
-                    <li><a href="">Bags</a></li>
-                    <li><a href="">Accessories</a></li>
+                    <li><a href="/products/man/outwear">Outerwear</a></li>
+                    <li><a href="/products/man/tops">Tops</a></li>
+                    <li><a href="/products/man/bottoms">Bottoms</a></li>
+                    <li><a href="/products/man/jeans">Jeans</a></li>
+                    <li><a href="/products/man/bags">Bags</a></li>
+                    <li><a href="/products/man/accessories">Accessories</a></li>
                 </ul>
             </li>
             <li>
@@ -80,64 +80,48 @@
         </ul>
     </nav>
 </div>
-<ul class="grid">
-    <li>
-        <figure class="grid__figure">
-            <img src="https://picsum.photos/300/200/?random" alt="">
-            <figcaption>Vehicula Quam Nibh</figcaption>
-        </figure>
-    </li>
-    <li>
-        <figure class="grid__figure">
-            <img src="https://picsum.photos/200/800/?random" alt="">
-            <figcaption>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</figcaption>
-        </figure>
-    </li>
-    <li>
-        <figure class="grid__figure">
-            <img src="https://picsum.photos/200/300/?random" alt="">
-            <figcaption>Parturient Mollis Malesuada Tristique Inceptos.</figcaption>
-        </figure>
-    </li>
-    <li>
-        <figure class="grid__figure">
-            <img src="https://picsum.photos/400/200/?random" alt="">
-            <figcaption>Vehicula Quam Nibh</figcaption>
-        </figure>
-    </li>
-    <li>
-        <figure class="grid__figure">
-            <img src="https://picsum.photos/200/600/?random" alt="">
-            <figcaption>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</figcaption>
-        </figure>
-    </li>
-    <li>
-        <figure class="grid__figure">
-            <img src="https://picsum.photos/600/600/?random" alt="">
-            <figcaption>Parturient Mollis Malesuada Tristique Inceptos.</figcaption>
-        </figure>
-    </li>
-    <li>
-        <figure class="grid__figure">
-            <img src="https://picsum.photos/420/300/?random" alt="">
-            <figcaption>Vehicula Quam Nibh</figcaption>
-        </figure>
-    </li>
-    <li>
-        <figure class="grid__figure">
-            <img src="https://picsum.photos/800/800/?random" alt="">
-            <figcaption>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.</figcaption>
-        </figure>
-    </li>
-    <li>
-        <figure class="grid__figure">
-            <img src="https://picsum.photos/640/400/?random" alt="">
-            <figcaption>Parturient Mollis Malesuada Tristique Inceptos.</figcaption>
-        </figure>
-    </li>
+<ul class="grid" id = "ul">
+
 </ul>
 <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js?site=5ea837e8c8100167b2dffd49" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="/resources/js/webflow.js" type="text/javascript"></script>
 <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+<script>
+    function createList() {
+        var ul = document.getElementById('ul');
+        var s = ${products.size()};
+        <c:forEach var="prod" items="${products}">
+
+        console.log('for');
+        var newli = document.createElement('li');
+        var figure = document.createElement('figure')
+        figure.className = "grid__figure";
+        var figcaption = document.createElement('figcaption');
+        var name = "${prod.name}";
+        //figcaption.textContent = name;
+
+        var a = document.createElement('a');
+        var linkText = document.createTextNode(name);
+        a.appendChild(linkText);
+        a.title = name;
+        a.href = "/product/${prod.id}";
+        figcaption.appendChild(a);
+
+        var figcaptionPrice = document.createElement('figcaption');
+        var price = "${prod.price} $";
+        figcaptionPrice.textContent = price;
+        var image = new Image();
+        image.src = '/resources/images/shop/${prod.id}.jpg';
+
+        newli.appendChild(figure);
+        figure.appendChild(image);
+        figure.appendChild(figcaption);
+        figure.appendChild(figcaptionPrice);
+        ul.appendChild(newli);
+
+        </c:forEach>
+    }
+    window.onload = createList();
+</script>
 </body>
 </html>

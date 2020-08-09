@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,8 +27,9 @@ public class ProductService {
         Optional<Product> userFromDb = productRepository.findById(productId);
         return userFromDb.orElse(null);
     }
-//    public Product findProductBySex(SexCategory sexCategory){
-//        Optional<Product> optionalProduct = productRepository.findAll()
-//    }
+
+    public List<Product> findBySexAndCategory (Category categoryid,SexCategory sexCategoryig){
+        return productRepository.findBySexAndCategory(categoryid,sexCategoryig);
+    }
 
 }

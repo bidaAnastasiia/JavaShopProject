@@ -49,24 +49,24 @@
             <li>
                 <a href="" >Women</a>
                 <ul class="sub">
-                    <li><a href="">Outerwear</a></li>
-                    <li><a href="">Tops</a></li>
-                    <li><a href="">Bottoms</a></li>
-                    <li><a href="">Dresses & Jumpsuits</a></li>
-                    <li><a href="">Jeans</a></li>
-                    <li><a href="">Bags</a></li>
-                    <li><a href="">Accessories</a></li>
+                    <li><a href="/products/woman/outwear">Outerwear</a></li>
+                    <li><a href="/products/woman/tops">Tops</a></li>
+                    <li><a href="/products/woman/bottoms">Bottoms</a></li>
+                    <li><a href="/products/woman/dresses_jumpsuits">Dresses & Jumpsuits</a></li>
+                    <li><a href="/products/woman/jeans">Jeans</a></li>
+                    <li><a href="/products/woman/bags">Bags</a></li>
+                    <li><a href="/products/woman/accessories">Accessories</a></li>
                 </ul>
             </li>
             <li>
                 <a href="" >Men</a>
                 <ul class="sub">
-                    <li><a href="">Outerwear</a></li>
-                    <li><a href="">Tops</a></li>
-                    <li><a href="">Bottoms</a></li>
-                    <li><a href="">Jeans</a></li>
-                    <li><a href="">Bags</a></li>
-                    <li><a href="">Accessories</a></li>
+                    <li><a href="/products/man/outwear">Outerwear</a></li>
+                    <li><a href="/products/man/tops">Tops</a></li>
+                    <li><a href="/products/man/bottoms">Bottoms</a></li>
+                    <li><a href="/products/man/jeans">Jeans</a></li>
+                    <li><a href="/products/man/bags">Bags</a></li>
+                    <li><a href="/products/man/accessories">Accessories</a></li>
                 </ul>
             </li>
             <li>
